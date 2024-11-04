@@ -13,9 +13,14 @@ namespace Notes.Application.Common.Services
             _notesRepository = notesRepository;
         }
 
-        public async Task<List<Note>> GetAllNotes(Guid UserId)
+        public async Task<List<Note>> GetAll(Guid UserId)
         {
             return await _notesRepository.Get(UserId);
+        }
+
+        public async Task<Note> GetOne(Guid UserId, Guid Id)
+        {
+            return await _notesRepository.GetById(UserId, Id);
         }
 
         public async Task<Guid> CreateNote(Guid UserId, Guid Id, string Title, string Details)

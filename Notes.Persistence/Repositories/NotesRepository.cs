@@ -22,6 +22,19 @@ namespace Notes.Persistence.Notes.Repositories
             return notes;
         }
 
+        public async Task<Note> GetById(Guid UserId, Guid Id)
+        {
+            var noteEntity = await _context.Notes
+                .FirstOrDefaultAsync(note => note.Id == Id && note.UserId == UserId);
+
+            if (noteEntity == null || noteEntity.UserId != UserId)
+            {
+                throw new NotFoundExeption(nameof(Note), Id);
+            }
+
+            return noteEntity;
+        }
+
         public async Task<Guid> Create(Guid UserId, Guid Id, string Title, string Details)
         {
             var noteEntity = new Note
@@ -60,10 +73,15 @@ namespace Notes.Persistence.Notes.Repositories
 
         public async Task<Guid> Delete(Guid UserId, Guid Id)
         {
-            await _context.Notes
+            var noteRows = await _context.Notes
                 .Where(b => b.UserId == UserId)
                 .Where(b => b.Id == Id)
                 .ExecuteDeleteAsync();
+
+            if (noteRows == 0)
+            {
+                throw new NotFoundExeption(nameof(Note), Id);
+            }
 
             return Id;
         }
