@@ -1,7 +1,7 @@
 ﻿using Notes.Application.Interfaces;
 using Notes.Domain.Models;
 
-namespace Notes.Application.Common.Services
+namespace Notes.Application.Services
 {
     public class NotesService : INotesService
     {

@@ -1,6 +1,6 @@
 ﻿using Notes.Application.Interfaces.Auth;
 
-namespace Notes.Application.Common.ExternalLogic
+namespace Notes.Application.ExternalLogic
 {
     public class PasswordHasher : IPasswordHasher
     {

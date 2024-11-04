@@ -6,7 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Notes.Application.Common.ExternalLogic
+namespace Notes.Application.ExternalLogic
 {
     public class JwtProvider : IJwtProvider
     {

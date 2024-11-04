@@ -2,7 +2,7 @@
 using Notes.Application.Interfaces.Auth;
 using Notes.Domain.Models;
 
-namespace Notes.Application.Common.Services
+namespace Notes.Application.Services
 {
     public class UsersService
     {
@@ -11,9 +11,9 @@ namespace Notes.Application.Common.Services
         private readonly IJwtProvider _jwtProvider;
 
         public UsersService(
-            IPasswordHasher passwordHasher, 
+            IPasswordHasher passwordHasher,
             IUsersRepository userRepository,
-            IJwtProvider jwtProvider) 
+            IJwtProvider jwtProvider)
         {
             _passwordHasher = passwordHasher;
             _userRepository = userRepository;
@@ -39,7 +39,7 @@ namespace Notes.Application.Common.Services
 
             var result = _passwordHasher.Verify(password, userEntity.PasswordHash);
 
-            if(result == false)
+            if (result == false)
             {
                 throw new Exception("Failed login");
             }

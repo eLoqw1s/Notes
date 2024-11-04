@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Notes.Application.Common.Services;
 using Notes.Application.Interfaces;
+using Notes.Application.Services;
 using Notes.Persistence;
-using Notes.Persistence.Notes.Repositories;
+using Notes.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

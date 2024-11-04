@@ -1,4 +1,4 @@
-﻿namespace Notes.Application.Common.ExternalLogic
+﻿namespace Notes.Application.ExternalLogic
 {
     public class JwtOptions
     {

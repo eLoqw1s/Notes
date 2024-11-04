@@ -3,7 +3,7 @@ using Notes.Application.Common.Exeptions;
 using Notes.Application.Interfaces;
 using Notes.Domain.Models;
 
-namespace Notes.Persistence.Notes.Repositories
+namespace Notes.Persistence.Repositories
 {
     public class NotesRepository : INotesRepository
     {
