@@ -1,4 +1,4 @@
-﻿namespace Notes.Contracts.Notes
+﻿namespace Notes.WebApi.Contracts.Notes
 {
     public record NoteDetailsVm
     (

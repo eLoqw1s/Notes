@@ -1,4 +1,4 @@
-﻿using Notes.Domain;
+﻿using Notes.Domain.Models;
 
 namespace Notes.Application.Interfaces
 {

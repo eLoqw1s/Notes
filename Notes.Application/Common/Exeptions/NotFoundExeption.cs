@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Notes.Application.Common.Exeptions
+﻿namespace Notes.Application.Common.Exeptions
 {
     public class NotFoundExeption : Exception
     {

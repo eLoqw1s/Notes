@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Notes.Domain;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Notes.Domain.Models;
 
 namespace Notes.Persistence.EntityTypeConfigurations
 {

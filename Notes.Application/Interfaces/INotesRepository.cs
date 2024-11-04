@@ -1,6 +1,6 @@
-﻿using Notes.Domain;
+﻿using Notes.Domain.Models;
 
-namespace Notes.Persistence.Notes.Repositories
+namespace Notes.Application.Interfaces
 {
     public interface INotesRepository
     {

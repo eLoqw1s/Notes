@@ -1,4 +1,4 @@
-﻿namespace Notes.WebApi.Contracts
+﻿namespace Notes.WebApi.Contracts.Notes
 {
     public record CreateNoteDTO
     (

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Notes.Application.Interfaces;
-using Notes.Contracts.Notes;
-using Notes.Domain;
-using Notes.WebApi.Contracts;
+using Notes.WebApi.Contracts.Notes;
 
 namespace Notes.WebApi.Controllers
 {
