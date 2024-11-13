@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Notes.Domain.Models;
+using Notes.Persistence.EntityTypeConfigurations;
 
 namespace Notes.Persistence
 {
@@ -11,6 +12,11 @@ namespace Notes.Persistence
             :base(options)
         {
             Database.EnsureCreated();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new NoteConfiguration());
         }
     }
 }
