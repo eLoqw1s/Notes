@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Notes.Application.Interfaces;
 using Notes.WebApi.Contracts.Notes;
 
 namespace Notes.WebApi.Controllers
 {
+    [Authorize]
     public class NotesController : BaseController
     {
         private readonly INotesService _notesService;
@@ -17,6 +19,8 @@ namespace Notes.WebApi.Controllers
         public async Task<ActionResult<List<NoteDetailsVm>>> GetAllNotes()
         {
             var notes = await _notesService.GetAll(userId);
+
+            Console.WriteLine(userId);
 
             var response = notes.Select(b => new NoteDetailsVm(b.Id, b.Title, b.Details, 
                 b.CreationDate, b.EditDate));

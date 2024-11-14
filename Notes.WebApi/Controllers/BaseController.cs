@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace Notes.WebApi.Controllers
 {
@@ -7,8 +6,6 @@ namespace Notes.WebApi.Controllers
     [Route("[controller]")]
     public class BaseController : ControllerBase
     {
-        internal Guid userId => !User.Identity.IsAuthenticated 
-                ? Guid.Empty
-                : Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        internal Guid userId => new Guid(User.FindFirst("userId").Value);
     }
 }

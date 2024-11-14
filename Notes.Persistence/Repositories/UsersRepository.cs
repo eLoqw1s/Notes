@@ -36,7 +36,7 @@ namespace Notes.Persistence.Repositories
 
             if (userEntity == null)
             {
-                throw new NotFoundExeption(nameof(Note), email);
+                throw new Exception("Failed email");
             }
 
             return userEntity;
